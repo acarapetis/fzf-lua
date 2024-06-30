@@ -382,11 +382,11 @@ M.file = function(x, opts)
   end
   if opts.file_icons then
     icon, hl = devicons.get_devicon(origpath)
+    icon = icon .. utils.nbsp
     if hl and opts.color_icons then
       icon = utils.ansi_from_rgb(hl, icon)
     end
     ret[#ret + 1] = icon
-    ret[#ret + 1] = utils.nbsp
   end
   local _fmt_postfix -- when using `path.filename_first` v2
   if opts._fmt and type(opts._fmt.to) == "function" then
